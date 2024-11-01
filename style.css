@@ -3,13 +3,13 @@ body {
   margin: 0;
   overflow: hidden;
   background: linear-gradient(to bottom, #000000, #0f0c29, #302b63, #24243e);
-  position: relative;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Tahoma', sans-serif;
   direction: rtl; /* Aligns text for Persian */
+  position: relative;
 }
 
 .star {
@@ -43,13 +43,25 @@ body {
 
 /* Centered Text with Gradient and Glow */
 .centered-text {
-  position: absolute; /* Ensure text stays centered */
   font-size: 2em;
   font-weight: bold;
   text-align: center;
-  background: linear-gradient(45deg, #c9a0dc, #4b367c); /* Light purple to darker purple gradient */
+  background: linear-gradient(45deg, #c9a0dc, #4b367c); /* Light purple to darker purple */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8); /* White glow effect */
-  padding: 20px;
+  color: transparent; /* Fallback */
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8); /* White glow */
+}
+
+/* Selection Style */
+::selection {
+  background: rgba(201, 160, 220, 0.6); /* Light purple background for selection */
+  color: transparent; /* Make the text color transparent to show background */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* For Firefox */
+::selection {
+  background: rgba(201, 160, 220, 0.6); /* Same color for Firefox */
 }
